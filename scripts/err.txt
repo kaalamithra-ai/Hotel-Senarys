@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "c:\Users\wasee\Downloads\Hotel-Senarys--main\Hotel-Senarys--main\scripts\inspect_menu_dom.py", line 42, in <module>
+    print(f"{i+1:2d}. {name:32s} {price:>8s}  {state}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wasee\AppData\Roaming\uv\python\cpython-3.14-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u20b9' in position 41: character maps to <undefined>
