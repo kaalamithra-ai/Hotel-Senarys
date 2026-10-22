@@ -1,0 +1,15 @@
+=== PAGE / CART STATE ===
+menuCount    : 21 dishes
+menuCartCount: 0
+cartBadge    : 0
+floatCount   : 0
+search value : ''
+vegOnly      : False
+sort         : popular
+cart object  : {}
+cartCount()  : 0
+MENU.length  : 21
+persisted?   : {"ls":false,"ss":false}
+
+=== RENDERED MENU CARDS ===
+cards rendered: 21
