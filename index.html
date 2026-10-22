@@ -488,7 +488,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
 <!-- ROOM DETAIL MODAL -->
 <div id="roomModal" class="modal hidden fixed inset-0 z-[70] items-center justify-center p-4 bg-navy-900/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Room details">
   <div class="bg-white rounded-[26px] w-full max-w-[620px] max-h-[92vh] overflow-y-auto shadow-2xl">
-    <div class="relative"><img id="rmImg" src="" alt="Room detail" class="w-full h-[280px] object-cover rounded-t-[26px]"><button onclick="closeRoomDetail()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow font-bold" aria-label="Close details">✕</button><span id="rmBadge" class="absolute top-4 left-4 bg-navy-800 text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full"></span></div>
+    <div class="relative"><img id="rmImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Room detail" class="w-full h-[280px] object-cover rounded-t-[26px]"><button onclick="closeRoomDetail()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow font-bold" aria-label="Close details">✕</button><span id="rmBadge" class="absolute top-4 left-4 bg-navy-800 text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full"></span></div>
     <div class="p-7">
       <div class="flex justify-between items-start gap-4"><div><h3 id="rmTitle" class="font-display text-[28px] text-navy-800 leading-none"></h3><p id="rmMeta" class="text-[12.5px] text-slate-500 font-bold mt-2"></p></div><div class="text-right shrink-0"><p id="rmPrice" class="font-display text-[24px] text-navy-800 leading-none"></p><p class="text-[11px] text-slate-500 font-bold">per night + taxes</p></div></div>
       <p id="rmDesc" class="text-slate-600 text-[14px] leading-relaxed mt-4"></p>
@@ -600,12 +600,12 @@ function cartCount(){return Object.values(cart).reduce((a,b)=>a+b,0)}
 function cartSubtotal(){return Object.entries(cart).reduce((s,[id,q])=>{const m=MENU.find(x=>x.id==id);return s+(m?m.price*q:0)},0)}
 function addToCart(id){cart[id]=(cart[id]||0)+1;updateCartUI();renderMenu();const m=MENU.find(x=>x.id===id);toast(m.name+' added to your order')}
 function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCartUI();renderMenu()}
-function updateCartUI(){
+function updateCartUI(skipBody){
   const count=cartCount(), sub=cartSubtotal();
   const badge=$('cartBadge');badge.textContent=count;badge.classList.toggle('hidden',count===0);badge.classList.toggle('flex',count>0);
   $('menuCartCount').textContent=count;$('floatCount').textContent=count;$('floatTotal').textContent=fmt(Math.round(sub*1.05));
   const fc=$('floatCart');fc.classList.toggle('hidden',count===0);fc.classList.toggle('flex',count>0);
-  renderCartBody();
+  if(!skipBody)renderCartBody();
 }
 function renderCartBody(){
   const body=$('cartBody'),foot=$('cartFooter');const entries=Object.entries(cart);
@@ -632,8 +632,7 @@ function placeOrder(){
     <div class="bg-cream border border-[#EDE2C8] rounded-[16px] p-4 mt-6 text-left"><div class="flex justify-between text-[12px] font-extrabold"><span class="text-gold-dark">● ORDER RECEIVED</span><span class="text-slate-400">ETA 15–20 MINS</span></div><div class="h-2 bg-white rounded-full mt-3 overflow-hidden"><div class="h-full bg-gold rounded-full progress-bar"></div></div><p class="text-[12px] text-slate-500 font-semibold mt-3">Our kitchen has started on your order. Freshly prepared — please allow 15 to 20 mins.</p></div>
     <div class="flex gap-3 mt-6"><a href="tel:8123137005" class="flex-1 py-3 rounded-full border-2 border-navy-800 font-extrabold text-[13px] text-navy-800 text-center">Call Restaurant</a><button onclick="toggleCart(false)" class="btn-navy flex-1 py-3 rounded-full text-[13px]">Done</button></div></div>`;
   $('cartFooter').innerHTML='';cart={};
-  setTimeout(updateCartUI,400);renderMenu();
-  const badge=$('cartBadge');badge.classList.add('hidden');badge.classList.remove('flex');$('menuCartCount').textContent='0';$('floatCart').classList.add('hidden');$('floatCart').classList.remove('flex');
+  updateCartUI(true);renderMenu();
 }
 function toggleCart(open){$('cartDrawer').style.transform=open?'translateX(0)':'translateX(100%)';$('cartOverlay').classList.toggle('hidden',!open);document.body.style.overflow=open?'hidden':'';if(open)renderCartBody()}
 
