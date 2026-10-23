@@ -18,6 +18,15 @@ function check(name, pass, detail) {
   const { chrome, c } = await launch(PORT);
   try {
     await gotoPage(c, URL);
+    // Wait for async menu.json fetch to finish rendering
+    for (let i = 0; i < 100; i++) {
+      try {
+        const n = await c.evalExpr('typeof MENU !== "undefined" ? MENU.length : 0');
+        if (n === EXPECTED_DISHES) break;
+      } catch (e) {}
+      await sleep(100);
+    }
+    await sleep(500);
 
     // ---------- MENU BASELINE ----------
     const base = JSON.parse(await c.evalExpr(`JSON.stringify({

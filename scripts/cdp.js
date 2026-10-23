@@ -67,7 +67,7 @@ async function launch(port, width = 1440, height = 1000) {
     `--remote-debugging-port=${port}`,
     `--user-data-dir=${userDir}`,
     '--headless=new', '--disable-gpu', '--no-sandbox', '--no-first-run',
-    '--disable-dev-shm-usage', '--hide-scrollbars',
+    '--disable-dev-shm-usage', '--hide-scrollbars', '--allow-file-access-from-files',
     `--window-size=${width},${height}`,
     'about:blank',
   ], { stdio: 'ignore' });
