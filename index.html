@@ -3,8 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Senary | Tumakuru</title>
-<meta name="description" content="Hotel Senary's Nest Inn, Tumakuru. Luxury Suite & Deluxe Rooms and Senarys Multicuisine Restaurant — Aromas of Andhra, Tandoor, Nati Style & Chinese.">
+<title>Hotel Senary | Tumakuru — Rooms &amp; Multicuisine Restaurant</title>
+<meta name="description" content="Hotel Senary's Nest Inn, Tumakuru. Luxury Suite &amp; Deluxe Rooms and Senarys Multicuisine Restaurant — Aromas of Andhra, Tandoor, Nati Style &amp; Chinese.">
+<meta name="keywords" content="Hotel Senary, Tumakuru hotel, Suite room, Deluxe room, Senarys restaurant, Andhra food, Tandoor, Nati style, Chinese, Tumkur accommodation">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0E1F33">
+<link rel="canonical" href="https://hotelsenary.example.com/">
+<!-- Open Graph -->
+<meta property="og:type" content="hotel">
+<meta property="og:site_name" content="Hotel Senary">
+<meta property="og:title" content="Hotel Senary | Tumakuru — Rooms &amp; Multicuisine Restaurant">
+<meta property="og:description" content="Luxury Suite &amp; Deluxe Rooms and Senarys Multicuisine Restaurant — Aromas of Andhra, Tandoor, Nati Style &amp; Chinese.">
+<meta property="og:url" content="https://hotelsenary.example.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop">
+<meta property="og:locale" content="en_IN">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hotel Senary | Tumakuru — Rooms &amp; Multicuisine Restaurant">
+<meta name="twitter:description" content="Luxury Suite &amp; Deluxe Rooms and Senarys Multicuisine Restaurant in Tumakuru.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop">
 <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
@@ -14,8 +31,33 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Hotel Senary's Nest Inn",
+  "description": "Luxury Suite & Deluxe Rooms and Senarys Multicuisine Restaurant in Tumakuru.",
+  "telephone": "+91-8123137005",
+  "email": "senarysnestinn@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot No. 4112, A Khata, Shettihalli, Jayanagar Western Extn., Ring Road",
+    "addressLocality": "Tumakuru",
+    "postalCode": "572102",
+    "addressCountry": "IN"
+  },
+  "starRating": {"@type": "Rating", "ratingValue": "4.8"},
+  "priceRange": "₹₹",
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Room Service", "value": true}
+  ]
+}
+</script>
 <script>
 tailwind.config={theme:{extend:{colors:{navy:{900:'#0B1826',800:'#0E1F33',700:'#162E47',600:'#1E3A56'},gold:{DEFAULT:'#C6A15B',light:'#E3C98F',dark:'#A9853F'},cream:'#FAF7F1',cream2:'#F3EDE2',charcoal:'#22262E'},fontFamily:{display:['Fraunces','Georgia','serif'],body:['Manrope','system-ui','sans-serif']},boxShadow:{lux:'0 20px 50px rgba(11,24,38,.14)',card:'0 8px 30px rgba(11,24,38,.08)',gold:'0 10px 25px rgba(198,161,91,.35)'}}}}
 </script>
@@ -84,7 +126,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
     <div class="flex items-center justify-between h-[72px]">
       <a href="#home" class="flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-[12px] shadow-lux overflow-hidden flex items-center justify-center bg-navy-800">
-          <img src="assets/images/letter-s-logo.png" alt="Hotel Senary logo" class="w-full h-full object-contain">
+          <img loading="lazy" decoding="async" src="assets/images/letter-s-logo.png" alt="Hotel Senary logo" class="w-full h-full object-contain">
         </div>
         <div class="leading-none">
           <p class="font-display font-semibold text-[17px] md:text-[19px] text-navy-800 tracking-tight">Hotel  <span class="text-gold-dark">Senary</span></p>
@@ -118,7 +160,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
 
 <!-- HERO -->
 <section id="home" class="relative bg-navy-900 overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.14]"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000&auto=format&fit=crop" alt="Hotel Senary's Nest Inn luxury property" class="w-full h-full object-cover"></div>
+  <div class="absolute inset-0 opacity-[0.14]"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000&auto=format&fit=crop" alt="Hotel Senary's Nest Inn luxury property" loading="eager" fetchpriority="high" loading="eager" fetchpriority="high" class="w-full h-full object-cover"></div>
   <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,24,38,.97)_0%,rgba(11,24,38,.88)_52%,rgba(11,24,38,.35)_100%)]"></div>
   <div class="relative max-w-7xl mx-auto px-4 md:px-8 pt-10 md:pt-16 pb-8">
     <div class="grid lg:grid-cols-12 gap-10 items-center">
@@ -142,20 +184,20 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
           <div><p class="font-display text-2xl">95<span class="text-gold">+</span></p><p class="text-[11px] tracking-widest text-white/50 font-bold">SIGNATURE DISHES</p></div>
           <div class="w-px h-10 bg-white/15"></div>
           <div><p class="font-display text-2xl">15–20<span class="text-gold text-lg"> min</span></p><p class="text-[11px] tracking-widest text-white/50 font-bold">FOOD SERVED FRESH</p></div>
-          <div class="hidden sm:flex items-center gap-2 ml-auto"><div class="flex -space-x-2"><img class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Guest"><img class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="Guest"><img class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" alt="Guest"></div><p class="text-[12px] text-white/60 leading-tight">Trusted for<br><b class="text-white">family & business stays</b></p></div>
+          <div class="hidden sm:flex items-center gap-2 ml-auto"><div class="flex -space-x-2"><img loading="lazy" decoding="async" class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Guest"><img loading="lazy" decoding="async" class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="Guest"><img loading="lazy" decoding="async" class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" alt="Guest"></div><p class="text-[12px] text-white/60 leading-tight">Trusted for<br><b class="text-white">family & business stays</b></p></div>
         </div>
       </div>
 
       <div class="lg:col-span-6 relative reveal visible reveal-d1">
         <div class="relative rounded-[28px] overflow-hidden shadow-2xl border border-white/20">
-          <img id="heroMainImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1400&auto=format&fit=crop" alt="Elegant hotel and dining at Senary's Nest Inn" class="w-full h-[420px] md:h-[520px] object-cover transition-all duration-700">
+          <img loading="lazy" decoding="async" id="heroMainImg" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1400&auto=format&fit=crop" alt="Elegant hotel and dining at Senary's Nest Inn" class="w-full h-[420px] md:h-[520px] object-cover transition-all duration-700">
           <div class="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,rgba(11,24,38,.85),transparent)]"></div>
           <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
             <div class="text-white"><p class="text-[10px] tracking-[0.22em] font-extrabold text-gold-light" id="heroCaptionLabel">THE PROPERTY</p><p class="font-display text-xl leading-tight" id="heroCaptionTitle">Luxury stays, Ring Road</p></div>
             <div class="hidden sm:flex gap-2 shrink-0">
-              <button onclick="setHero(0,this)" class="hero-thumb thumb active w-14 h-11 rounded-lg overflow-hidden opacity-70 hover:opacity-100"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Hotel view"></button>
-              <button onclick="setHero(1,this)" class="hero-thumb thumb w-14 h-11 rounded-lg overflow-hidden opacity-70 hover:opacity-100"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite room"></button>
-              <button onclick="setHero(2,this)" class="hero-thumb thumb w-14 h-11 rounded-lg overflow-hidden opacity-70 hover:opacity-100"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Restaurant dining"></button>
+              <button onclick="setHero(0,this)" class="hero-thumb thumb active w-14 h-11 rounded-lg overflow-hidden opacity-70 hover:opacity-100"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Hotel view"></button>
+              <button onclick="setHero(1,this)" class="hero-thumb thumb w-14 h-11 rounded-lg overflow-hidden opacity-70 hover:opacity-100"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite room"></button>
+              <button onclick="setHero(2,this)" class="hero-thumb thumb w-14 h-11 rounded-lg overflow-hidden opacity-70 hover:opacity-100"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover" alt="Restaurant dining"></button>
             </div>
           </div>
         </div>
@@ -210,13 +252,13 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
     <!-- SUITE -->
     <article class="room-item room-card bg-white rounded-[26px] overflow-hidden border border-[#EDE6D6] shadow-card reveal" data-type="suite">
       <div class="relative">
-        <img id="suiteImg" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" alt="Suite Room at Hotel Senary's Nest Inn" class="w-full h-[300px] md:h-[340px] object-cover">
+        <img loading="lazy" decoding="async" id="suiteImg" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" alt="Suite Room at Hotel Senary's Nest Inn" class="w-full h-[300px] md:h-[340px] object-cover">
         <span class="absolute top-4 left-4 bg-navy-800 text-white text-[11px] font-extrabold tracking-wider px-3 py-1.5 rounded-full">★ PREMIUM • MOST LOVED</span>
         <span class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-[12px] font-extrabold text-navy-800">420 sq.ft</span>
         <div class="absolute bottom-4 left-4 bg-white rounded-full p-1 flex gap-1 shadow-lg">
-          <button onclick="swapRoomImg('suiteImg','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop',this)" class="thumb active w-11 h-9 rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite view 1"></button>
-          <button onclick="swapRoomImg('suiteImg','https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite view 2"></button>
-          <button onclick="swapRoomImg('suiteImg','https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite view 3"></button>
+          <button onclick="swapRoomImg('suiteImg','https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop',this)" class="thumb active w-11 h-9 rounded-full overflow-hidden"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite view 1"></button>
+          <button onclick="swapRoomImg('suiteImg','https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite view 2"></button>
+          <button onclick="swapRoomImg('suiteImg','https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Suite view 3"></button>
         </div>
       </div>
       <div class="p-6 md:p-7">
@@ -238,13 +280,13 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
     <!-- DELUXE -->
     <article class="room-item room-card bg-white rounded-[26px] overflow-hidden border border-[#EDE6D6] shadow-card reveal reveal-d1" data-type="deluxe">
       <div class="relative">
-        <img id="deluxeImg" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop" alt="Deluxe Room at Hotel Senary's Nest Inn" class="w-full h-[300px] md:h-[340px] object-cover">
+        <img loading="lazy" decoding="async" id="deluxeImg" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop" alt="Deluxe Room at Hotel Senary's Nest Inn" class="w-full h-[300px] md:h-[340px] object-cover">
         <span class="absolute top-4 left-4 bg-gold text-navy-900 text-[11px] font-extrabold tracking-wider px-3 py-1.5 rounded-full">BEST VALUE • BUSINESS READY</span>
         <span class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-[12px] font-extrabold text-navy-800">280 sq.ft</span>
         <div class="absolute bottom-4 left-4 bg-white rounded-full p-1 flex gap-1 shadow-lg">
-          <button onclick="swapRoomImg('deluxeImg','https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop',this)" class="thumb active w-11 h-9 rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Deluxe view 1"></button>
-          <button onclick="swapRoomImg('deluxeImg','https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Deluxe view 2"></button>
-          <button onclick="swapRoomImg('deluxeImg','https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Deluxe view 3"></button>
+          <button onclick="swapRoomImg('deluxeImg','https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop',this)" class="thumb active w-11 h-9 rounded-full overflow-hidden"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Deluxe view 1"></button>
+          <button onclick="swapRoomImg('deluxeImg','https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Deluxe view 2"></button>
+          <button onclick="swapRoomImg('deluxeImg','https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1200&auto=format&fit=crop',this)" class="thumb w-11 h-9 rounded-full overflow-hidden opacity-70"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Deluxe view 3"></button>
         </div>
       </div>
       <div class="p-6 md:p-7">
@@ -296,7 +338,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
       </div>
       <div class="lg:col-span-5">
         <div class="relative rounded-[20px] overflow-hidden h-[190px] border border-white/15">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Senarys Multicuisine Restaurant dining hall" class="w-full h-full object-cover">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Senarys Multicuisine Restaurant dining hall" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.88),transparent_60%)]"></div>
           <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end"><div><p class="text-[10px] tracking-[0.2em] font-extrabold text-gold-light">OPEN DAILY</p><p class="font-display text-lg">11:00 AM — 11:00 PM</p></div><span class="bg-gold text-navy-900 text-[11px] font-extrabold px-3 py-1.5 rounded-full">Dine-In • Room Service</span></div>
         </div>
@@ -337,9 +379,9 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
 
     <!-- SIGNATURE STRIP -->
     <div class="grid sm:grid-cols-3 gap-4 mt-6 reveal">
-      <div class="rounded-[18px] overflow-hidden relative h-[150px] group cursor-pointer" onclick="quickSearch('Andhra Chilli Chicken')"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop" alt="Andhra Chilli Chicken" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.9),transparent_65%)]"></div><div class="absolute bottom-3 left-4"><p class="text-[10px] tracking-widest font-extrabold text-gold-light">CHEF'S SIGNATURE</p><p class="font-display text-lg">Andhra Chilli Chicken — ₹299</p></div></div>
-      <div class="rounded-[18px] overflow-hidden relative h-[150px] group cursor-pointer" onclick="quickSearch('Tandoori Chicken')"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=800&auto=format&fit=crop" alt="Tandoori Chicken" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.9),transparent_65%)]"></div><div class="absolute bottom-3 left-4"><p class="text-[10px] tracking-widest font-extrabold text-gold-light">FROM THE CLAY OVEN</p><p class="font-display text-lg">Tandoori Chicken — ₹399</p></div></div>
-      <div class="rounded-[18px] overflow-hidden relative h-[150px] group cursor-pointer" onclick="quickSearch('Ragi Mudde')"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop" alt="Ragi Mudde Saaru Nati style" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.9),transparent_65%)]"></div><div class="absolute bottom-3 left-4"><p class="text-[10px] tracking-widest font-extrabold text-gold-light">NATI CLASSIC</p><p class="font-display text-lg">Ragi Mudde Saaru — ₹199</p></div></div>
+      <div class="rounded-[18px] overflow-hidden relative h-[150px] group cursor-pointer" onclick="quickSearch('Andhra Chilli Chicken')"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop" alt="Andhra Chilli Chicken" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.9),transparent_65%)]"></div><div class="absolute bottom-3 left-4"><p class="text-[10px] tracking-widest font-extrabold text-gold-light">CHEF'S SIGNATURE</p><p class="font-display text-lg">Andhra Chilli Chicken — ₹299</p></div></div>
+      <div class="rounded-[18px] overflow-hidden relative h-[150px] group cursor-pointer" onclick="quickSearch('Tandoori Chicken')"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=800&auto=format&fit=crop" alt="Tandoori Chicken" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.9),transparent_65%)]"></div><div class="absolute bottom-3 left-4"><p class="text-[10px] tracking-widest font-extrabold text-gold-light">FROM THE CLAY OVEN</p><p class="font-display text-lg">Tandoori Chicken — ₹399</p></div></div>
+      <div class="rounded-[18px] overflow-hidden relative h-[150px] group cursor-pointer" onclick="quickSearch('Ragi Mudde')"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop" alt="Ragi Mudde Saaru Nati style" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"><div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,24,38,.9),transparent_65%)]"></div><div class="absolute bottom-3 left-4"><p class="text-[10px] tracking-widest font-extrabold text-gold-light">NATI CLASSIC</p><p class="font-display text-lg">Ragi Mudde Saaru — ₹199</p></div></div>
     </div>
   </div>
 </section>
@@ -374,7 +416,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
 <section id="contact" class="max-w-7xl mx-auto px-4 md:px-8 pb-20">
   <div class="grid lg:grid-cols-12 gap-6">
     <div class="lg:col-span-5 bg-navy-800 text-white rounded-[26px] p-7 md:p-9 relative overflow-hidden reveal">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1000&auto=format&fit=crop" alt="" class="absolute inset-0 w-full h-full object-cover opacity-15">
+      <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1000&auto=format&fit=crop" alt="" class="absolute inset-0 w-full h-full object-cover opacity-15">
       <div class="relative">
         <div class="flex items-center gap-3"><span class="gold-line"></span><span class="eyebrow text-gold-light">03 — Contact Us</span></div>
         <h2 class="font-display text-4xl font-semibold leading-tight mt-3">Visit us in<br><span class="italic text-gold-light">Tumakuru.</span></h2>
@@ -420,7 +462,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
   <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
     <div class="grid md:grid-cols-12 gap-10">
       <div class="md:col-span-5">
-        <div class="flex items-center gap-3"><div class="w-11 h-11 rounded-[12px] bg-white/10 overflow-hidden flex items-center justify-center"><img src="assets/images/letter-s-logo.png" alt="Hotel Senary logo" class="w-full h-full object-contain"></div><div class="leading-none"><p class="font-display font-semibold text-[18px]">Hotel  <span class="text-gold-light">Senary</span></p><p class="text-[9px] tracking-[0.24em] font-extrabold text-white/40 mt-1">COMFORT • LUXURY</p></div></div>
+        <div class="flex items-center gap-3"><div class="w-11 h-11 rounded-[12px] bg-white/10 overflow-hidden flex items-center justify-center"><img loading="lazy" decoding="async" src="assets/images/letter-s-logo.png" alt="Hotel Senary logo" class="w-full h-full object-contain"></div><div class="leading-none"><p class="font-display font-semibold text-[18px]">Hotel  <span class="text-gold-light">Senary</span></p><p class="text-[9px] tracking-[0.24em] font-extrabold text-white/40 mt-1">COMFORT • LUXURY</p></div></div>
         <p class="text-white/55 text-[13.5px] leading-relaxed mt-5 max-w-sm">Premium rooms and Senarys Multicuisine Restaurant on Ring Road, Tumakuru. A proud part of the Senary Emerald Group.</p>
         <div class="flex gap-2 mt-5"><span class="bg-white/10 text-[11px] font-bold px-3 py-1.5 rounded-full">Suite ₹5,499</span><span class="bg-white/10 text-[11px] font-bold px-3 py-1.5 rounded-full">Deluxe ₹3,299</span><span class="bg-gold text-navy-900 text-[11px] font-extrabold px-3 py-1.5 rounded-full">★ 4.8 Guest Rating</span></div>
       </div>
@@ -495,7 +537,7 @@ input:focus,select:focus,textarea:focus{border-color:#C6A15B!important;box-shado
 <!-- ROOM DETAIL MODAL -->
 <div id="roomModal" class="modal hidden fixed inset-0 z-[70] items-center justify-center p-4 bg-navy-900/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Room details">
   <div class="bg-white rounded-[26px] w-full max-w-[620px] max-h-[92vh] overflow-y-auto shadow-2xl">
-    <div class="relative"><img id="rmImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Room detail" class="w-full h-[280px] object-cover rounded-t-[26px]"><button onclick="closeRoomDetail()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow font-bold" aria-label="Close details">✕</button><span id="rmBadge" class="absolute top-4 left-4 bg-navy-800 text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full"></span></div>
+    <div class="relative"><img loading="lazy" decoding="async" id="rmImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Room detail" class="w-full h-[280px] object-cover rounded-t-[26px]"><button onclick="closeRoomDetail()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow font-bold" aria-label="Close details">✕</button><span id="rmBadge" class="absolute top-4 left-4 bg-navy-800 text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full"></span></div>
     <div class="p-7">
       <div class="flex justify-between items-start gap-4"><div><h3 id="rmTitle" class="font-display text-[28px] text-navy-800 leading-none"></h3><p id="rmMeta" class="text-[12.5px] text-slate-500 font-bold mt-2"></p></div><div class="text-right shrink-0"><p id="rmPrice" class="font-display text-[24px] text-navy-800 leading-none"></p><p class="text-[11px] text-slate-500 font-bold">per night + taxes</p></div></div>
       <p id="rmDesc" class="text-slate-600 text-[14px] leading-relaxed mt-4"></p>
