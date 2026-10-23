@@ -5,6 +5,9 @@ const { launch, gotoPage, sleep } = require('./cdp');
 const PORT = 9400 + Math.floor(Math.random() * 400); // avoid clashing with a lingering Chrome
 const URL = 'file:///' + path.resolve(__dirname, '..', 'index.html').replace(/\\/g, '/');
 
+// Expected number of menu items. Keep in sync with the MENU array in index.html.
+const EXPECTED_DISHES = 95;
+
 const results = [];
 function check(name, pass, detail) {
   results.push({ name, pass, detail });
@@ -23,9 +26,9 @@ function check(name, pass, detail) {
       menuLen: MENU.length,
       tabAll: document.querySelector('.menu-tab[data-filter="all"] .opacity-60')?.textContent
     })`));
-    check('menu renders 21 dishes', base.cards === 21 && base.menuLen === 21, JSON.stringify(base));
-    check('menu count label matches', base.count.trim() === '21 dishes', base.count);
-    check('"All Menu" tab badge shows 21', base.tabAll === '21', String(base.tabAll));
+    check('menu renders 95 dishes', base.cards === EXPECTED_DISHES && base.menuLen === EXPECTED_DISHES, JSON.stringify(base));
+    check('menu count label matches', base.count.trim() === EXPECTED_DISHES + ' dishes', base.count);
+    check('"All Menu" tab badge shows 95', base.tabAll === String(EXPECTED_DISHES), String(base.tabAll));
 
     // ---------- CATEGORY FILTERS ----------
     for (const [cat, label] of [['soups', 'Soups & Bites'], ['tandoor', 'Tandoor Non-Veg'],
@@ -44,6 +47,72 @@ function check(name, pass, detail) {
         JSON.stringify(r));
     }
 
+    // ---------- MENU DATA INTEGRITY ----------
+    // Guards the expanded menu: every dish must belong to a category that has a
+    // filter tab, otherwise it would be unreachable via the category filters.
+    const integrity = JSON.parse(await c.evalExpr(`(() => {
+      clearMenuFilters();
+      const tabs = [...document.querySelectorAll('.menu-tab')].map(b => b.dataset.filter);
+      const cats = [...new Set(MENU.map(m => m.cat))];
+      const result = {
+        tabs,
+        cats,
+        orphaned: MENU.filter(m => !tabs.includes(m.cat)).map(m => m.id + ':' + m.name),
+        ids: new Set(MENU.map(m => m.id)).size === MENU.length,
+        names: new Set(MENU.map(m => m.name)).size === MENU.length,
+        malformed: MENU.filter(m => typeof m.price !== 'number' || !m.name || !m.desc
+          || typeof m.veg !== 'boolean' || typeof m.spice !== 'number' || typeof m.pop !== 'boolean')
+          .map(m => m.id),
+        missingLabel: MENU.filter(m => !m.catLabel).map(m => m.id),
+        // every dish must be reachable by name search too
+        unsearchable: MENU.filter(m => {
+          const q = m.name.toLowerCase();
+          const el = document.querySelector('#menuSearch');
+          el.value = q; el.dispatchEvent(new Event('input'));
+          const n = document.querySelectorAll('article.menu-card').length;
+          return n === 0;
+        }).map(m => m.id)
+      };
+      clearMenuFilters();
+      return JSON.stringify(result);
+    })()`));
+    check('every dish maps to an existing filter tab', integrity.orphaned.length === 0, JSON.stringify(integrity.orphaned));
+    check('menu ids and names are unique', integrity.ids && integrity.names, JSON.stringify(integrity));
+    check('no malformed menu entries', integrity.malformed.length === 0, JSON.stringify(integrity.malformed));
+    check('every dish has a category label', integrity.missingLabel.length === 0, JSON.stringify(integrity.missingLabel));
+    check('every dish is reachable via search', integrity.unsearchable.length === 0, JSON.stringify(integrity.unsearchable));
+
+    // ---------- HOMEPAGE SHORTCUT TARGETS ----------
+    // The signature strip and category chips jump into the menu via quickSearch()/
+    // jumpToCategory(). Their targets must still resolve now that the menu changed.
+    const shortcuts = JSON.parse(await c.evalExpr(`(() => {
+      const targets = [...document.querySelectorAll('[onclick*="quickSearch("],[onclick*="jumpToCategory("]')]
+        .map(el => ({ el, call: el.getAttribute('onclick') }));
+      const out = [];
+      for (const { el, call } of targets) {
+        const open = call.indexOf("('");
+        if (open < 0) { out.push({ call, ok: false, why: 'unparsed' }); continue; }
+        const fn = call.slice(0, open);
+        const arg = call.slice(open + 2, call.lastIndexOf("')"));
+        clearMenuFilters();
+        if (fn === 'quickSearch') {
+          // search is a substring match, so the target need not be an exact dish name
+          const hits = MENU.filter(d => d.name.toLowerCase().includes(arg.toLowerCase())
+            || d.desc.toLowerCase().includes(arg.toLowerCase())
+            || d.catLabel.toLowerCase().includes(arg.toLowerCase()));
+          out.push({ call, ok: hits.length > 0, why: 'no dish matches "' + arg + '"' });
+        } else {
+          const hits = MENU.filter(d => d.cat === arg);
+          out.push({ call, ok: hits.length > 0, why: 'no dish in category "' + arg + '"' });
+        }
+      }
+      clearMenuFilters();
+      return JSON.stringify(out);
+    })()`));
+    check('all homepage menu shortcuts resolve to dishes',
+      shortcuts.length > 0 && shortcuts.every(s => s.ok),
+      JSON.stringify(shortcuts.filter(s => !s.ok)));
+
     // ---------- SEARCH ----------
     const search = JSON.parse(await c.evalExpr(`(() => {
       clearMenuFilters();
@@ -60,7 +129,7 @@ function check(name, pass, detail) {
     })()`));
     check('search "chicken" filters correctly', search.chicken === search.expected && search.chicken > 0, JSON.stringify(search));
     check('no-match shows empty state', search.empty && search.gridHidden, JSON.stringify(search));
-    check('clearing search restores 21 cards', search.restored === 21, JSON.stringify(search));
+    check('clearing search restores 95 cards', search.restored === EXPECTED_DISHES, JSON.stringify(search));
 
 
 
@@ -76,7 +145,7 @@ function check(name, pass, detail) {
       cb.checked = false; cb.dispatchEvent(new Event('change'));
       return JSON.stringify({ shown, expected, allVeg, restored: document.querySelectorAll('article.menu-card').length });
     })()`));
-    check('veg-only filter works', veg.shown === veg.expected && veg.allVeg && veg.restored === 21, JSON.stringify(veg));
+    check('veg-only filter works', veg.shown === veg.expected && veg.allVeg && veg.restored === EXPECTED_DISHES, JSON.stringify(veg));
 
     // ---------- SORTING ----------
     const sort = JSON.parse(await c.evalExpr(`(() => {
